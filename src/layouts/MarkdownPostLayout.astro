@@ -16,7 +16,7 @@ const { frontmatter } = Astro.props;
   <h2>Tags</h2>
   <ul>
     {
-      frontmatter.tags.map((tag) => (
+      frontmatter.tags.map((tag: string) => (
         <li>
           <a href={`/tags/${tag}`}>{tag}</a>
         </li>
