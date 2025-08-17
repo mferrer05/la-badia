@@ -1,16 +1,31 @@
-<div class="h-dvh bg-gray-900 px-24 py-56 text-center">
-  <h1
-    class="font-serif text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl"
-  >
-    Apartaments rurals la Badia
-  </h1>
+---
+import { Image } from "astro:assets";
+import sheepsImage from "../assets/sheeps.webp";
+---
 
-  <p class="mt-8 text-lg font-light text-pretty text-gray-400 sm:text-xl/8">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-</div>
+<section
+  class="grid gap-24 bg-gray-900 px-0 py-72 lg:grid-cols-2 lg:px-24 xl:px-40"
+>
+  <div class="px-6 sm:px-14 md:px-18 lg:px-0">
+    <h2
+      class="font-serif text-5xl tracking-tight text-balance text-white sm:text-7xl"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </h2>
+    <p class="mt-20 text-lg text-gray-300 sm:text-xl/loose">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
+  </div>
+
+  <Image
+    src={sheepsImage}
+    alt="Two sheeps eating grass."
+    class="h-[450px] object-cover lg:h-[750px]"
+  />
+</section>
