@@ -1,31 +1,55 @@
 ---
 import { Image } from "astro:assets";
-import sheepsImage from "../assets/sheeps.webp";
+import testImage from "../assets/test-2.webp";
+import { DoorClosed, BedDouble, User } from "@lucide/astro";
 ---
 
 <section
-  class="grid gap-24 bg-gray-900 px-0 py-72 lg:grid-cols-2 lg:px-24 xl:px-40"
+  id="la-casa"
+  class="bg-emerald-950 py-30 md:px-20 md:py-44 lg:py-56 xl:py-72"
 >
-  <div class="px-6 sm:px-14 md:px-18 lg:px-0">
-    <h2
-      class="font-serif text-5xl tracking-tight text-balance text-white sm:text-7xl"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    </h2>
-    <p class="mt-20 text-lg text-gray-300 sm:text-xl/loose">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </p>
-  </div>
+  <div
+    class="container m-auto grid grid-cols-1 gap-20 xl:grid-cols-3 xl:gap-24"
+  >
+    <div class="px-6 md:px-0 xl:col-span-2">
+      <div class="mb-4">
+        <span
+          class="text-sm font-medium tracking-widest text-white/80 uppercase"
+          >La casa</span
+        >
+      </div>
 
-  <Image
-    src={sheepsImage}
-    alt="Two sheeps eating grass."
-    class="h-[450px] object-cover lg:h-[750px]"
-  />
+      <h2
+        class="font-serif text-5xl tracking-tight text-balance text-white lg:text-6xl xl:text-7xl"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      </h2>
+
+      <p class="mt-20 text-lg text-white/80 sm:text-xl/loose">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+
+      <div>
+        <ul
+          class="divide mt-20 flex flex-col justify-center divide-y divide-solid divide-white/30 text-sm tracking-widest text-white/80 lg:flex-row lg:divide-x-1 lg:divide-y-0 [&>li]:flex [&>li]:items-center [&>li]:justify-center [&>li]:gap-4 [&>li]:px-12 [&>li]:py-4 lg:[&>li]:py-0"
+        >
+          <li><DoorClosed stroke-width="1.5" /> 2 apartaments</li>
+          <li><BedDouble stroke-width="1.5" /> 6 llits</li>
+          <li><User stroke-width="1.5" /> 10 persones</li>
+        </ul>
+      </div>
+    </div>
+
+    <Image
+      src={testImage}
+      alt="test image."
+      class="h-[450px] object-cover brightness-80 lg:h-[750px]"
+    />
+  </div>
 </section>
