@@ -1,7 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  --color-primary: oklch(26.2% 0.051 172.552);
+  --swiper-navigation-color: var(--color-white);
+}
 
 @theme {
   --font-sans: "Montserrat", sans-serif;
   --font-serif: "Playfair Display", serif;
+}
+
+swiper-container::part(button-prev),
+swiper-container::part(button-next) {
+  box-sizing: border-box;
+  margin: 0 6px;
 }
