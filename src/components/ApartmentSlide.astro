@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+
+export interface Props {
+  title: string;
+  description: string;
+  facilities: string[];
+  images: ImageMetadata[];
+}
+
+const { title, description, facilities, images } = Astro.props;
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2">
+  <div class="p-6 md:p-12">
+    <h4
+      class="font-serif text-4xl tracking-tight text-balance text-emerald-950"
+    >
+      {title}
+    </h4>
+    <p class="mt-8 text-lg text-emerald-950/80 sm:text-xl/loose">
+      {description}
+    </p>
+    <ul
+      class="mt-8 grid grid-cols-1 gap-x-8 gap-y-2 text-base text-emerald-950/80 sm:grid-cols-2"
+    >
+      {facilities.map((facility) => <li>{facility}</li>)}
+    </ul>
+  </div>
+
+  <div>
+    <swiper-container navigation="true" effect="fade" class="h-full">
+      {
+        images.map((img) => (
+          <swiper-slide>
+            <Image
+              src={img}
+              alt="Apartment image"
+              class="h-full object-cover"
+            />
+          </swiper-slide>
+        ))
+      }
+    </swiper-container>
+  </div>
+</div>
