@@ -29,7 +29,12 @@ const { title, description, facilities, images } = Astro.props;
   </div>
 
   <div>
-    <swiper-container navigation="true" effect="fade" class="h-full">
+    <swiper-container
+      pagination="true"
+      navigation="true"
+      effect="fade"
+      class="h-full"
+    >
       {
         images.map((img) => (
           <swiper-slide>

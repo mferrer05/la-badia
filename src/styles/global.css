@@ -5,6 +5,7 @@
 :root {
   --color-primary: oklch(26.2% 0.051 172.552);
   --swiper-navigation-color: var(--color-white);
+  --swiper-pagination-color: var(--color-white);
 }
 
 @theme {
@@ -14,6 +15,9 @@
 
 swiper-container::part(button-prev),
 swiper-container::part(button-next) {
+  @apply hidden rounded-full bg-black/50 hover:bg-black/80 md:flex;
   box-sizing: border-box;
-  margin: 0 6px;
+  padding: 12px;
+  width: 40px;
+  height: 40px;
 }
