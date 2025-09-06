@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import room1 from "../assets/room_1.webp";
+import room2 from "../assets/room_2.webp";
+import room3 from "../assets/room_3.webp";
+
+const gallery: ImageMetadata[] = [room1, room2, room3, room1, room2, room3];
+---
+
+<section
+  id="galeria"
+  class="bg-primary px-6 py-30 md:px-20 md:py-44 lg:py-56 xl:py-72"
+>
+  <div class="container m-auto">
+    <div class="mb-4">
+      <span class="text-sm font-medium tracking-widest text-white/80 uppercase"
+        >Galeria</span
+      >
+    </div>
+
+    <swiper-container
+      id="gallerySwiper"
+      init="false"
+      class="h-[400px] lg:h-[650px] 2xl:h-[750px]"
+    >
+      {
+        gallery.map((image) => (
+          <swiper-slide>
+            <Image
+              src={image}
+              alt="Gallery image"
+              class="h-full object-cover"
+            />
+          </swiper-slide>
+        ))
+      }
+    </swiper-container>
+  </div>
+</section>
+
+<script>
+  import type { SwiperContainer } from "swiper/element";
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const swiperEl = document.getElementById(
+      "gallerySwiper",
+    ) as SwiperContainer | null;
+
+    if (swiperEl) {
+      const swiperParams = {
+        navigation: true,
+        pagination: true,
+        spaceBetween: 30,
+        slidesPerView: 1,
+        breakpoints: {
+          1280: {
+            slidesPerView: 2,
+          },
+          1536: {
+            slidesPerView: 3,
+          },
+        },
+      };
+
+      Object.assign(swiperEl, swiperParams);
+
+      swiperEl.initialize();
+    }
+  });
+</script>
