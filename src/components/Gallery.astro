@@ -48,6 +48,13 @@ const gallery: ImageMetadata[] = [room1, room2, room3, room1, room2, room3];
 
     if (swiperEl) {
       const swiperParams = {
+        injectStyles: [
+          `
+          .swiper {
+            overflow: visible;
+          }
+        `,
+        ],
         navigation: true,
         pagination: true,
         spaceBetween: 30,
@@ -57,7 +64,7 @@ const gallery: ImageMetadata[] = [room1, room2, room3, room1, room2, room3];
             slidesPerView: 2,
           },
           1536: {
-            slidesPerView: 3,
+            slidesPerView: 2,
           },
         },
       };
